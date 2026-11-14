@@ -12,15 +12,9 @@ The official site is https://olympium.net. Do not commit `*.img`, `*.tar.gz`, ce
 ./build-slim.sh
 ```
 
+The script packs `system.img`, `vendor.img`, `userdata.img`, and `hdc` from `OHOS_IMAGES` only when that directory is a local OpenHarmony standard-system build whose identity text says OpenHarmony and does not say HarmonyOS. It does not download a HarmonyOS package, a Huawei update, or a third-party disk image. It does not write a placeholder archive.
 
-1. Build the OpenHarmony standard system from the upstream OpenHarmony manifest, product `linkspan_slim`, with developer mode enabled and no store client.
-2. Write an `EDITION` file whose text contains `openharmony-slim`, the version, and `developer-mode`.
-3. Pack `system.img`, `vendor.img`, `userdata.img`, `EDITION`, `bin/hdc`, `bin/linkspan-runtime`, and `bin/linkspan-surface`.
-4. `linkspan-runtime` starts QEMU with `-display none`. `linkspan-surface` is the host window. If it cannot attach to the guest, it must exit. It must not open an emulator frame.
-5. Refuse any input file whose name or manifest says HarmonyOS.
-
-
-After a build, fill `sha256` in `runtime-lock.json`, set `"published": true` in this file and in Linkspan's `share/runtime-lock.json`, tag `v0.1.0`, and attach the `.tar.gz` assets to the GitHub Release. Until that release exists, Linkspan reports that the image is not published.
+No image was built for 0.1.0. An upstream standard-system build asks for about 32 GiB of RAM and 16 cores. The host used here has 4 vCPU and 16 GiB of RAM, which is below that. `published` stays false and `sha256` stays empty.
 
 ## Assets
 
