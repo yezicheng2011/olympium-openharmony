@@ -1,0 +1,14 @@
+{
+  "id": "openharmony",
+  "edition": "slim",
+  "version": "0.1.0",
+  "published": false,
+  "repo": "https://github.com/yezicheng2011/olympium-openharmony",
+  "tag": "v0.1.0",
+  "summary": "A slim OpenHarmony standard system. Not a HarmonyOS commercial image.",
+  "assets": {
+    "x86_64": "openharmony-slim-x86_64.tar.gz",
+    "aarch64": "openharmony-slim-aarch64.tar.gz"
+  },
+  "sha256": {}
+}
