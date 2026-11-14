@@ -29,10 +29,11 @@ This script will not download a HarmonyOS commercial package, a Huawei update,
 or a third-party disk image and republish it. It will not write a placeholder
 archive.
 
-A from-source OpenHarmony standard system (product linkspan_slim, with bm and
-aa) was not built here. The upstream standard-system build asks for about
-32 GiB of RAM and 16 cores. This host has 4 vCPU and 16 GiB of RAM, which is
-below that, so no image was produced. olympium-openharmony stays unpublished.
+A from-source OpenHarmony image was not built here. The public QEMU path is
+the OpenHarmony manifest product qemu-arm-linux-min or qemu-arm-linux-headless,
+then qemu_run.sh. That is a source build, not a prebuilt image. Upstream's
+own example uses --jobs 4. A lower job count can compile when memory holds.
+This environment did not sync that tree, and no archive was packed.
 EOF
   exit 2
 fi
